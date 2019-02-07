@@ -1,6 +1,19 @@
-/*
- * Create a list that holds all of your cards
- */
+
+ // array that holds all cards
+const cardDeck = ["fa-diamond", "fa-paper-plane-o", "fa fa-futbol-o" "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+
+// declare variable to store moves and matches
+let moves = 0;
+let matches = 0;
+
+// check first card if open
+let game_start = false;
+
+// launch timer
+let timer = new Timer();
+timer.addEventListener('secondsUpdated', function (e) {  
+ document.getELementByID('timer').html(timer.getTimeValues().toString());
+});
 
 
 /*
