@@ -1,33 +1,35 @@
 
- // array that holds all cards
+ // Create array that holds all cards
 const cardDeck = ["fa-diamond", "fa-paper-plane-o", "fa fa-futbol-o" "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 
-// declare variable to store moves and matches
+// Declare variable to store moves and matches
 let moves = 0;
 let matches = 0;
 
-// check first card if open
+// Set first card 
 let game_start = false;
 
-// launch timer
+// Launch timer object
 let timer = new Timer();
 timer.addEventListener('secondsUpdated', function (e) {  
  document.querySelector('#timer').html(timer.getTimeValues().toString());
 });
 
-// variable for reset
+// Variable for reset
 let reset = document.querySelector('#reset-button').click(resetGame);
 
-// create and append card html
+//  Append created card html
 function createCard(card) {
     document.querySelector('#deck').append(`<li class="card animated"><i class="fa ${card}"></i></li>`);
 }
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+
+// Generate random cards on the deck
+function generateCards() {
+    for (let i = 0; i < 2; i++) {
+        cardDeck = shuffle(cardDeck);
+        cardDeck.forEach(createCard);
+    }
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -42,20 +44,6 @@ function shuffle(array) {
     }
 
     return array;
-}
-
-// reset the game
-function resetGame() {
-    moves = 0;
-    match_found = 0;
-    document.querySelector('#deck').empty();
-    document.querySelector('#stars').empty();
-    document.querySelector('#game-cards')[0].style.display = "";
-    document.querySelector('#sucess-result')[0].style.display = "none";
-    game_started=false;
-    timer.stop();
-    document.querySelector('#timer').html("00:00:00");
-    playGame();
 }
 
 
