@@ -60,3 +60,10 @@ For specific, detailed instructions, look at the project instructions in the [Ud
     Add unique functionality beyond the minimum requirements (Implement a leaderboard, store game state using local storage, etc.)
     Implement additional optimizations that improve the performance and user experience of the game (keyboard shortcuts for gameplay, etc).
 
+
+## How I built the Memory Game
+I traversed the DOM with Vanilla JS creating and appending elements and also styled the game
+* created a deck of cards that shuffles when game is refreshed
+* created a counter to count the number of moves made by player and timer to know the duration of a play
+* added effects to cards when they match and are unmatched
+* create a pop-up modal when player wins game
