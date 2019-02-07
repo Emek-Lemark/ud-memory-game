@@ -12,10 +12,16 @@ let game_start = false;
 // launch timer
 let timer = new Timer();
 timer.addEventListener('secondsUpdated', function (e) {  
- document.getELementByID('timer').html(timer.getTimeValues().toString());
+ document.querySelector('#timer').html(timer.getTimeValues().toString());
 });
 
+// variable for reset
+let reset = document.querySelector('#reset-button').click(resetGame);
 
+// create and append card html
+function createCard(card) {
+    document.querySelector('#deck').append(`<li class="card animated"><i class="fa ${card}"></i></li>`);
+}
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -38,6 +44,20 @@ function shuffle(array) {
     return array;
 }
 
+// reset the game
+function resetGame() {
+    moves = 0;
+    match_found = 0;
+    document.querySelector('#deck').empty();
+    document.querySelector('#stars').empty();
+    document.querySelector('#game-cards')[0].style.display = "";
+    document.querySelector('#sucess-result')[0].style.display = "none";
+    game_started=false;
+    timer.stop();
+    document.querySelector('#timer').html("00:00:00");
+    playGame();
+}
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -49,3 +69,15 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+// add blank stars
+function addBlankStar() {
+    document.querySelector('#stars').children()[0].remove();
+    document.querySelector('#stars').append('<li><i class="fa fa-star-o"></i></li>');
+}
+// add initial stars
+function addStars() {
+    for (var i = 0; i < 3; i++) {
+        document.querySelector('#stars').append('<li><i class="fa fa-star"></i></li>');
+    }
+}
