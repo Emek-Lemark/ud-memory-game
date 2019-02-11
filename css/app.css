@@ -34,16 +34,56 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: auto;
+    height: 100%;
+}
+.game-header {
+    font-weight: 500;
 }
 
 .text-center {
   text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
+
+
+#timer {
+    text-align: center;
+}
+
+#restart {
+    text-align: center;
+    cursor: pointer;
+}
+
+#restart i {
+    padding-left: 5px;
+}
+
+#score {
+    display: inherit;
+    text-align: center;
+}
+
+.stars {
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.star {
+    list-style-type: none;
+    display: inline-block;
+    color: #ffcd00;
+}
+
 
 /*
  * Styles for the deck of cards
