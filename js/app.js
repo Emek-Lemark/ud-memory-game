@@ -67,4 +67,33 @@ function startGame() {
     clearInterval(interval);
 }
 
+/*
+	Moves function that counts the number of moves the player took
+	Star-rating changes depending on the number of moves
+*/
+function movesCounter() {
+moves++;
+counter.innerHTML = moves;
+if (moves == 1) {
+      second = 0;
+      minute = 0;
+      hour = 0;
+      startTimer();
+}
+    // star rating changes as the game continue
+    if (moves > 8 && moves < 16) {
+        for (let i = 0; i < 3; i++) {
+            if (i > 1) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+    else if (moves > 18) {
+    for (let i = 0; i < 3; i++) {
+        if (i > 0) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+}
 
