@@ -14,6 +14,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 body {
@@ -86,6 +87,7 @@ h1 {
     background: #02ccba;
     font-size: 33px;
 }
+
 
 /*
  * Styles for the Score Panel
