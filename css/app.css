@@ -17,8 +17,14 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    background: -webkit-linear-gradient(top left, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background: -o-linear-gradient(top left, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background: linear-gradient(to bottom right, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 50s ease infinite;
+    -moz-animation: Gradient 50s ease infinite;
+    -o-animation: Gradient 50s ease infinite;
+    animation: Gradient 50s ease infinite;    font-family: 'Coda', cursive;
 }
 
 .container {
@@ -107,3 +113,56 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/*
+ * Background color animations
+ */
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-o-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+

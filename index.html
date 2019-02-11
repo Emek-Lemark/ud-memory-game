@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -17,66 +17,68 @@
 
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
+        		<li><i class="fas fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">3</span> Moves
+        	<span class="moves">0</span> Moves
+            <div class="timer"></div>
 
-            <div class="restart">
-        		<i class="fa fa-repeat"></i>
+            <div class="restart" onclick="startGame()">
+        		<i class="fas fa-sync"></i>
         	</div>
         </section>
+        
 
-        <ul class="deck">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
+        <ul class="deck" id="deck">
+            <li class="card" type="github">
+                <i class="fab fa-github"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+            <li class="card" type="mailchimp">
+                <i class="fab fa-mailchimp"></i>
             </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
+            <li class="card match" type="redhat">
+                <i class="fab fa-redhat"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
+            <li class="card" type="behance">
+                <i class="fab fa-behance"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
+            <li class="card" type="gripfire">
+                <i class="fab fa-gripfire"></i>
             </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
+            <li class="card match" type="redhat">
+                <i class="fab fa-redhat"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
+            <li class="card" type="reddit">
+                <i class="fab fa-reddit"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
+            <li class="card" type="sass">
+                <i class="fab fa-sass"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
+            <li class="card" type="github">
+                <i class="fab fa-github"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
+            <li class="card" type="digg">
+                <i class="fab fa-digg"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
+            <li class="card" type="reddit">
+                <i class="fab fa-reddit"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
+            <li class="card" type="digg">
+                <i class="fab fa-digg"></i>
             </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
+            <li class="card open show" type="behance">
+                <i class="fab fa-behance"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
+            <li class="card" type="sass">
+                <i class="fab fa-sass"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+            <li class="card" type="mailchimp">
+                <i class="fab fa-mailchimp"></i>
             </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
+            <li class="card" type="gripfire">
+                <i class="fab fa-gripfire"></i>
             </li>
         </ul>
     </div>
