@@ -97,3 +97,33 @@ if (moves == 1) {
     }
 }
 
+
+// Initialization and definition of the imer function
+
+let second = 0, minute = 0; hour = 0;
+let timer = document.querySelector(".timer");
+let interval;
+function startTimer() {
+interval = setInterval(function() {
+  timer.innerHTML = minute + " mins " + second + " secs";
+  second++;
+  if (second == 60) {
+      minute++;
+      second = 0;
+  }
+  if (minute == 60) {
+      hour++;
+      minute = 0;
+  }
+}, 1000);
+}
+
+
+ // Toggle between opened and showed cards to display open cards
+
+let displayCard = function() {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+};
+
