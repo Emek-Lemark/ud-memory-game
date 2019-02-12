@@ -14,19 +14,21 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 body {
-    background: -webkit-linear-gradient(135deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background: -o-linear-gradient(135deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+
+    background: -webkit-linear-gradient(top left, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background: -o-linear-gradient(top left, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background: linear-gradient(to bottom right, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
     -webkit-animation: Gradient 50s ease infinite;
     -moz-animation: Gradient 50s ease infinite;
     -o-animation: Gradient 50s ease infinite;
-    animation: Gradient 50s ease infinite;
+    animation: Gradient 50s ease infinite;    
     font-family: 'Coda', cursive;
-    color: #fff;
+
 }
 
 .container {
@@ -133,6 +135,16 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.unmatched {
+    background: red;
+    cursor: default;
+}
+
+.deck .card.disabled {
+    pointer-events: none;
+}
+
+
 /*
  * Styles for the Score Panel
  */
@@ -141,6 +153,8 @@ h1 {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    font-size: 1em;
+
 }
 
 .score-panel .stars {
@@ -159,6 +173,7 @@ h1 {
     float: right;
     cursor: pointer;
 }
+<<<<<<< HEAD
 
 
 /*
@@ -362,5 +377,140 @@ h1 {
     }
     to {
         opacity: 1
+    }
+}
+
+/* 
+* Timer layout
+*/
+.timer {
+    display: inline-block;
+    margin: 2px;
+  padding-left: 20px;
+}
+
+/* Styles for congratulations modal when game is completed*/
+.message {
+    position: fixed;
+    background: rgba(0, 75, 255, 0.4);
+    transition: opacity 400ms;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.showup {
+    margin: 72px auto;
+    padding: 21px;
+    background: #ff69b4;
+    border-radius: 6px;
+    width: 88%;
+    position: relative;
+    font-family: 'Fascinate Inline', serif;
+}
+
+.showup h2 {
+    font-family: 'Fascinate Inline', serif;
+}
+
+.showup .close {
+    position: absolute;
+    top: 21px;
+    right: 32px;
+    transition: all 200ms;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.showup .congratulation, .stats {
+    max-height: 50%;
+    overflow: auto;
+    text-align: center;
+}
+
+.show {
+    visibility: visible;
+    opacity: 100;
+}
+
+.message h2 {
+  text-align: center;
+  font-family: 'Helvetica ', serif;
+}
+
+header h1{
+  font-family: 'Helvetica ', serif;
+}
+
+#star-rating li {
+    display: inline-block;
+}
+
+#play-again {
+    font-family: 'Helvetica', serif;
+    border-radius: 5px;
+    background-color:#96beff;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 30px;
+    display: block;
+    margin: auto;
+    width: auto;
+}
+
+/*
+ * Background color animations
+ */
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-o-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
     }
 }
