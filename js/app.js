@@ -127,3 +127,42 @@ let displayCard = function() {
     this.classList.toggle("disabled");
 };
 
+
+// Function for flipped cards that adds selected cards to open cards array and checks match
+
+function cardFlipped() {
+    chosenCards.push(this);
+    let flips = chosenCards.length;
+    if(flips === 2 ) {
+      movesCounter();
+        if(chosenCards[0].type === chosenCards[1].type){
+          matched();
+        } else {
+            unmatched();
+        }
+    }
+}
+
+// Function matched created when two cards match
+
+function matched() {
+    chosenCards[0].classList.add("match", "disabled");
+    chosenCards[1].classList.add("match", "disabled");
+    chosenCards[0].classList.remove("show", "open", "no-event");
+    chosenCards[1].classList.remove("show", "open", "no-event");
+    chosenCards = [];
+}
+
+// Function unmatched created when two cards don't match
+
+function unmatched() {
+    chosenCards[0].classList.add("unmatched");
+    chosenCards[1].classList.add("unmatched");
+    disabled();
+    setTimeout(function() {
+    chosenCards[0].classList.remove("show", "open", "no-event", "unmatched");
+    chosenCards[1].classList.remove("show", "open", "no-event", "unmatched");
+    enable();
+    chosenCards = [];
+    }, 1100);
+}
