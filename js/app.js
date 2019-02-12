@@ -17,9 +17,9 @@ let threeStars = document.querySelectorAll('.stars li');
 
 // variable for matched cards
 let matchedCards = document.getElementsByClassName('match');
-
+let closeIcon = document.querySelector(".close");
 //variable for modal
-let modal = document.getElementById('modal');
+let modal = document.getElementById('popup');
 
 // array variable to store the clicked cards
 let chosenCards = [];
@@ -44,20 +44,6 @@ function shuffle(array) {
 let second = 0, minute = 0; hour = 0;
 let timer = document.querySelector(".timer");
 let interval;
-function startTimer() {
-interval = setInterval(function() {
-  timer.innerHTML = minute + " mins " + second + " secs";
-  second++;
-  if (second == 60) {
-      minute++;
-      second = 0;
-  }
-  if (minute == 60) {
-      hour++;
-      minute = 0;
-  }
-}, 1000);
-}
 
 
 // Initializing Start game function when browser window is loaded
@@ -88,6 +74,22 @@ function startGame() {
     timer.innerHTML = "0 mins 0 secs";
     clearInterval(interval);
 }
+
+function startTimer() {
+interval = setInterval(function() {
+  timer.innerHTML = minute + " mins " + second + " secs";
+  second++;
+  if (second == 60) {
+      minute++;
+      second = 0;
+  }
+  if (minute == 60) {
+      hour++;
+      minute = 0;
+  }
+}, 1000);
+}
+
 
 /*
 	Moves function that counts the number of moves the player took
@@ -187,15 +189,6 @@ function enable() {
 }
 
 
-  //close modal function, so the modal can be closed and the game reset
-function closeModal() {
-    closeIcon.addEventListener("click", function(){
-        modal.classList.remove("show");
-        startGame();
-    });
-}
-
-
 // Congratulations function is created when all the deck have flipped paired cards
 
 function congrats() {
@@ -204,14 +197,24 @@ function congrats() {
         finalTime = timer.innerHTML;
   // a well done modal is shown
   modal.classList.add("show");
-    // a varible star rating is created
-    var starRating = document.querySelector(".stars").innerHTML;
+    // a variable star rating is created
+    let starRating = document.querySelector(".stars").innerHTML;
     document.getElementById("finalMove").innerHTML = moves;
     document.getElementById("star-rating").innerHTML = starRating;
     document.getElementById("totalTime").innerHTML = finalTime;
       closeModal();
     };
 }
+
+
+  //close modal function, so the modal can be closed and the game reset
+function closeModal() {
+    typeof closeIcon.addEventListener("click", function(){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+
 
 // play again function
 function playAgain() {
