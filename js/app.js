@@ -21,6 +21,8 @@ let matchedCards = document.getElementsByClassName('match');
 //variable for modal
 let modal = document.getElementById('modal');
 
+// array variable to store the clicked cards
+let chosenCards = [];
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -93,7 +95,7 @@ function startGame() {
 */
 function movesCounter() {
 moves++;
-counter.innerHTML = moves;
+count.innerHTML = moves;
 if (moves == 1) {
       second = 0;
       minute = 0;
