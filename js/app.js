@@ -5,7 +5,7 @@ let card = document.getElementsByClassName('card');
 const cards = [...card];
 
 //variable that holds all the cards
-const cardDeck = document.getElementById('deck');
+let cardDeck = document.getElementById('deck');
 
 //variable to count moves
 let moves = 0;
@@ -19,7 +19,7 @@ let threeStars = document.querySelectorAll('.stars li');
 let matchedCards = document.getElementsByClassName('match');
 
 //variable for modal
-let modal = document.getElementByID('modal');
+let modal = document.getElementById('modal');
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -37,6 +37,26 @@ function shuffle(array) {
     return array;
 }
  
+ // Initialization and definition of the imer function
+
+let second = 0, minute = 0; hour = 0;
+let timer = document.querySelector(".timer");
+let interval;
+function startTimer() {
+interval = setInterval(function() {
+  timer.innerHTML = minute + " mins " + second + " secs";
+  second++;
+  if (second == 60) {
+      minute++;
+      second = 0;
+  }
+  if (minute == 60) {
+      hour++;
+      minute = 0;
+  }
+}, 1000);
+}
+
 
 // Initializing Start game function when browser window is loaded
 
@@ -53,7 +73,7 @@ function startGame() {
     }
         // moves is set to 0
     moves = 0;
-    counter.innerHTML = moves;
+    count.innerHTML = moves;
     for (let i = 0; i < stars.length; i++) {
         stars[i].style.color = "FFD700";
         stars[i].style.visibility = "visible";
@@ -98,25 +118,6 @@ if (moves == 1) {
 }
 
 
-// Initialization and definition of the imer function
-
-let second = 0, minute = 0; hour = 0;
-let timer = document.querySelector(".timer");
-let interval;
-function startTimer() {
-interval = setInterval(function() {
-  timer.innerHTML = minute + " mins " + second + " secs";
-  second++;
-  if (second == 60) {
-      minute++;
-      second = 0;
-  }
-  if (minute == 60) {
-      hour++;
-      minute = 0;
-  }
-}, 1000);
-}
 
 
  // Toggle between opened and showed cards to display open cards
@@ -192,10 +193,9 @@ function closeModal() {
     });
 }
 
-/**
-* @description Congratulations function is created
-* when all the deck have flipped paired cards
-*/
+
+// Congratulations function is created when all the deck have flipped paired cards
+
 function congrats() {
     if(matchedCards.length == 16) {
         clearInterval(interval);
@@ -216,10 +216,9 @@ function playAgain() {
     modal.classList.remove("show");
     startGame();
 }
-  /**
-  * Event listener is atached to cards to each card
-  * to interact with the player, the game rules
-  */
+  
+  // Event listener is atached to cards to each card to interact with the player.
+  
 for (let i = 0; i < cards.length; i++) {
     card = cards[i];
     card.addEventListener("click", displayCard);
