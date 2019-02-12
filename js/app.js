@@ -166,3 +166,63 @@ function unmatched() {
     chosenCards = [];
     }, 1100);
 }
+
+ //cards are disabled temporarily
+function disabled() {
+      Array.prototype.filter.call(cards, function(card){
+        card.classList.add("disabled");
+    });
+}
+    //cards are enabled and matched cards are disabled
+function enable() {
+    Array.prototype.filter.call(cards, function(card) {
+      card.classList.remove("disabled");
+      for (let i = 0; i < matchedCards.length; i++) {
+          matchedCards[i].classList.add("disabled");
+        }
+    });
+}
+
+
+  //close modal function, so the modal can be closed and the game reset
+function closeModal() {
+    closeIcon.addEventListener("click", function(){
+        modal.classList.remove("show");
+        startGame();
+    });
+}
+
+/**
+* @description Congratulations function is created
+* when all the deck have flipped paired cards
+*/
+function congrats() {
+    if(matchedCards.length == 16) {
+        clearInterval(interval);
+        finalTime = timer.innerHTML;
+  // a well done modal is shown
+  modal.classList.add("show");
+    // a varible star rating is created
+    var starRating = document.querySelector(".stars").innerHTML;
+    document.getElementById("finalMove").innerHTML = moves;
+    document.getElementById("star-rating").innerHTML = starRating;
+    document.getElementById("totalTime").innerHTML = finalTime;
+      closeModal();
+    };
+}
+
+// play again function
+function playAgain() {
+    modal.classList.remove("show");
+    startGame();
+}
+  /**
+  * Event listener is atached to cards to each card
+  * to interact with the player, the game rules
+  */
+for (let i = 0; i < cards.length; i++) {
+    card = cards[i];
+    card.addEventListener("click", displayCard);
+    card.addEventListener("click", cardFlipped);
+    card.addEventListener("click", congrats);
+};
