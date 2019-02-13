@@ -14,7 +14,6 @@ let count = document.querySelector('.moves');
 
 // variable to store stars list
 const stars = document.querySelectorAll('.fa-star');
-let threeStars = document.querySelectorAll('.stars li');
 
 // variable for matched cards
 let matchedCards = document.getElementsByClassName('match');
@@ -42,7 +41,8 @@ function shuffle(array) {
  
  // Initialization and definition of the imer function
 
-let second = 0, minute = 0; hour = 0;
+let second = 0, minute = 0; 
+let hour = 0;
 let timer = document.querySelector(".timer");
 let interval;
 
@@ -93,8 +93,8 @@ interval = setInterval(function() {
 
 
 /*
-	Moves function that counts the number of moves the player took
-	Star-rating changes depending on the number of moves
+  Moves function that counts the number of moves the player took
+  Star-rating changes depending on the number of moves
 */
 function movesCounter() {
 moves++;
@@ -134,7 +134,7 @@ let displayCard = function() {
 };
 
 
-// Function for flipped cards that adds selected cards to open cards array and checks match
+// Function for flipped cards that checks match
 
 function cardFlipped() {
     chosenCards.push(this);
@@ -190,12 +190,12 @@ function enable() {
 }
 
 
-// Congratulations function is created when all the deck have flipped paired cards
+// Congratulations function is created when all player finishes
 
 function congrats() {
     if(matchedCards.length == 16) {
         clearInterval(interval);
-        finalTime = timer.innerHTML;
+        let finalTime = timer.innerHTML;
   // a well done modal is shown
   modal.classList.add("show");
     // a variable star rating is created
@@ -204,7 +204,7 @@ function congrats() {
     document.getElementById("star-rating").innerHTML = starRating;
     document.getElementById("totalTime").innerHTML = finalTime;
       closeModal();
-    };
+    }
 }
 
 
@@ -230,4 +230,4 @@ for (let i = 0; i < cards.length; i++) {
     card.addEventListener("click", displayCard);
     card.addEventListener("click", cardFlipped);
     card.addEventListener("click", congrats);
-};
+}
