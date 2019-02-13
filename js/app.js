@@ -141,7 +141,7 @@ function cardFlipped() {
     let flips = chosenCards.length;
     if(flips === 2 ) {
       movesCounter();
-        if(chosenCards[0].type === chosenCards[1].type){
+        if(chosenCards[0].dataset.text === chosenCards[1].dataset.text) {
           matched();
         } else {
             unmatched();
