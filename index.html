@@ -11,99 +11,80 @@
 </head>
 <body>
     <div class="container">
-
         <header>
             <h1 class="game-header">Memory Game</h1>
-           <p class="header-sub"><a title="GitHub Memory Project" href="https://github.com/Emek-Lemark/ud-memory-game" target="_blank">Github</a></p> 
+            <p class="header-sub"><a title="GitHub Memory Project" href="https://github.com/Emek-Lemark/ud-memory-game" target="_blank">Github</a></p> 
         </header>
-
+        
+        <!-- Score panel, stars, moves -->
         <div class="score-panel">
             <div id="score">
-        	<ul class="stars">
-        		<li><i class="fas fa-star"></i></li>
-        		<li><i class="fas fa-star"></i></li>
-        		<li><i class="fas fa-star"></i></li>
-        	</ul>
+        	   <ul class="stars">
+        		  <li><i class="fas fa-star"></i></li>
+        		  <li><i class="fas fa-star"></i></li>
+        		  <li><i class="fas fa-star"></i></li>
+        	   </ul>
+                <span class="moves">0</span> moves
+            
+                <div class="timer"></div>
+                <div class="restart" onclick="startGame()">
+        		  <i class="fas fa-sync"></i>
+                </div>
+            </div> 
 
-        	<span class="moves">0</span> moves
-            <div class="timer"></div>
-
-            <div class="restart" onclick="startGame()">
-        		<i class="fas fa-sync"></i>
-
-        	</div>
-        </div> 
-
+        <!-- Game deck of icons -->
         <ul class="deck" id="deck">
             <li class="card" data-text="github">
                 <i class="fab fa-github"></i>
             </li>
-
             <li class="card" data-text="mailchimp">
                 <i class="fab fa-mailchimp"></i>
             </li>
-
             <li class="card match" data-text="redhat">
                 <i class="fab fa-redhat"></i>
             </li>
-
             <li class="card" data-text="behance">
                 <i class="fab fa-behance"></i>
             </li>
             <li class="card" data-text="gripfire">
                 <i class="fab fa-gripfire"></i>
-
             </li>
-
             <li class="card match" data-text="redhat">
                 <i class="fab fa-redhat"></i>
-
             </li>
-
             <li class="card" data-text="reddit">
                 <i class="fab fa-reddit"></i>
-
             </li>
-
             <li class="card" data-text="sass">
                 <i class="fab fa-sass"></i>
-
             </li>
-
             <li class="card" data-text="github">
                 <i class="fab fa-github"></i>
-
             </li>
             <li class="card" data-text="digg">
                 <i class="fab fa-digg"></i>
-
             </li>
-
             <li class="card" data-text="reddit">
                 <i class="fab fa-reddit"></i>
-
             </li>
-
             <li class="card" data-text="digg">
                 <i class="fab fa-digg"></i>
             </li>
-
             <li class="card open show" data-text="behance">
                 <i class="fab fa-behance"></i>
             </li>
             <li class="card" data-text="sass">
                 <i class="fab fa-sass"></i>
-
             </li>
-
             <li class="card" data-text="mailchimp">
                 <i class="fab fa-mailchimp"></i>
             </li>
-
             <li class="card" data-text="gripfire">
                 <i class="fab fa-gripfire"></i>
             </li>
         </ul>
+
+        <!-- Popup message when game is finished -->
         <div id="popup" class="message">
             <div class="showup">
                 <h2>Congratulations !!!</h2>
