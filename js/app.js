@@ -17,7 +17,7 @@ const stars = document.querySelectorAll('.fa-star');
 
 // variable for matched cards
 let matchedCards = document.getElementsByClassName('match');
-let closeIcon = document.querySelector(".close");
+let closeIcon = document.querySelector('.close');
 //variable for modal
 let modal = document.getElementById('popup');
 
@@ -43,7 +43,7 @@ function shuffle(array) {
 
 let second = 0, minute = 0; 
 let hour = 0;
-let timer = document.querySelector(".timer");
+let timer = document.querySelector('.timer');
 let interval;
 
 
@@ -58,27 +58,27 @@ function startGame() {
         [].forEach.call(cards, function(item){
             cardDeck.appendChild(item);
         });
-        cards[i].classList.remove("show", "open", "match", "disabled");
+        cards[i].classList.remove('show', 'open', 'match', 'disabled');
     }
         // moves is set to 0
     moves = 0;
     count.innerHTML = moves;
     for (let i = 0; i < stars.length; i++) {
-        stars[i].style.color = "FFD700";
-        stars[i].style.visibility = "visible";
+        stars[i].style.color = 'FFD700';
+        stars[i].style.visibility = 'visible';
     }
         //timer is set to 0
     second = 0;
     minute = 0;
     hour = 0;
-    let timer = document.querySelector(".timer");
-    timer.innerHTML = "0 mins 0 secs";
+    let timer = document.querySelector('.timer');
+    timer.innerHTML = '0 mins 0 secs';
     clearInterval(interval);
 }
 
 function startTimer() {
 interval = setInterval(function() {
-  timer.innerHTML = minute + " mins " + second + " secs";
+  timer.innerHTML = minute + ' mins ' + second + ' secs';
   second++;
   if (second == 60) {
       minute++;
@@ -109,14 +109,14 @@ if (moves == 1) {
     if (moves > 13 && moves < 19) {
         for (let i = 0; i < 3; i++) {
             if (i > 1) {
-                stars[i].style.visibility = "collapse";
+                stars[i].style.visibility = 'collapse';
             }
         }
     }
     else if (moves > 20) {
     for (let i = 0; i < 3; i++) {
         if (i > 0) {
-                stars[i].style.visibility = "collapse";
+                stars[i].style.visibility = 'collapse';
             }
         }
     }
@@ -128,9 +128,9 @@ if (moves == 1) {
  // Toggle between opened and showed cards to display open cards
 
 let displayCard = function() {
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
+    this.classList.toggle('open');
+    this.classList.toggle('show');
+    this.classList.toggle('disabled');
 };
 
 
@@ -152,22 +152,22 @@ function cardFlipped() {
 // Function matched created when two cards match
 
 function matched() {
-    chosenCards[0].classList.add("match", "disabled");
-    chosenCards[1].classList.add("match", "disabled");
-    chosenCards[0].classList.remove("show", "open", "no-event");
-    chosenCards[1].classList.remove("show", "open", "no-event");
+    chosenCards[0].classList.add('match', 'disabled');
+    chosenCards[1].classList.add('match', 'disabled');
+    chosenCards[0].classList.remove('show', 'open', 'no-event');
+    chosenCards[1].classList.remove('show', 'open', 'no-event');
     chosenCards = [];
 }
 
 // Function unmatched created when two cards don't match
 
 function unmatched() {
-    chosenCards[0].classList.add("unmatched");
-    chosenCards[1].classList.add("unmatched");
+    chosenCards[0].classList.add('unmatched');
+    chosenCards[1].classList.add('unmatched');
     disabled();
     setTimeout(function() {
-    chosenCards[0].classList.remove("show", "open", "no-event", "unmatched");
-    chosenCards[1].classList.remove("show", "open", "no-event", "unmatched");
+    chosenCards[0].classList.remove('show', 'open', 'no-event', 'unmatched');
+    chosenCards[1].classList.remove('show', 'open', 'no-event', 'unmatched');
     enable();
     chosenCards = [];
     }, 1100);
@@ -176,15 +176,15 @@ function unmatched() {
  //cards are disabled temporarily
 function disabled() {
       Array.prototype.filter.call(cards, function(card){
-        card.classList.add("disabled");
+        card.classList.add('disabled');
     });
 }
     //cards are enabled and matched cards are disabled
 function enable() {
     Array.prototype.filter.call(cards, function(card) {
-      card.classList.remove("disabled");
+      card.classList.remove('disabled');
       for (let i = 0; i < matchedCards.length; i++) {
-          matchedCards[i].classList.add("disabled");
+          matchedCards[i].classList.add('disabled');
         }
     });
 }
@@ -197,12 +197,12 @@ function congrats() {
         clearInterval(interval);
         let finalTime = timer.innerHTML;
   // a well done modal is shown
-  modal.classList.add("show");
+  modal.classList.add('show');
     // a variable star rating is created
-    let starRating = document.querySelector(".stars").innerHTML;
-    document.getElementById("finalMove").innerHTML = moves;
-    document.getElementById("star-rating").innerHTML = starRating;
-    document.getElementById("totalTime").innerHTML = finalTime;
+    let starRating = document.querySelector('.stars').innerHTML;
+    document.getElementById('finalMove').innerHTML = moves;
+    document.getElementById('star-rating').innerHTML = starRating;
+    document.getElementById('totalTime').innerHTML = finalTime;
       closeModal();
     }
 }
@@ -210,8 +210,8 @@ function congrats() {
 
   //close modal function, so the modal can be closed and the game reset
 function closeModal() {
-    typeof closeIcon.addEventListener("click", function(){
-        modal.classList.remove("show");
+    typeof closeIcon.addEventListener('click', function(){
+        modal.classList.remove('show');
         startGame();
     });
 }
@@ -219,7 +219,7 @@ function closeModal() {
 
 // play again function
 function playAgain() {
-    modal.classList.remove("show");
+    modal.classList.remove('show');
     startGame();
 }
   
@@ -227,7 +227,7 @@ function playAgain() {
   
 for (let i = 0; i < cards.length; i++) {
     card = cards[i];
-    card.addEventListener("click", displayCard);
-    card.addEventListener("click", cardFlipped);
-    card.addEventListener("click", congrats);
+    card.addEventListener('click', displayCard);
+    card.addEventListener('click', cardFlipped);
+    card.addEventListener('click', congrats);
 }
