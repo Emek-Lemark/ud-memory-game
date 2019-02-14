@@ -106,14 +106,14 @@ if (moves == 1) {
       startTimer();
 }
     // star rating changes as the game continue
-    if (moves > 8 && moves < 16) {
+    if (moves > 13 && moves < 19) {
         for (let i = 0; i < 3; i++) {
             if (i > 1) {
                 stars[i].style.visibility = "collapse";
             }
         }
     }
-    else if (moves > 18) {
+    else if (moves > 20) {
     for (let i = 0; i < 3; i++) {
         if (i > 0) {
                 stars[i].style.visibility = "collapse";
