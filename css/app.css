@@ -246,3 +246,43 @@ h1 {
 	}
 } 
 
+/*
+ * Media queries
+ */
+
+/* For mobile phone */
+@media screen and (max-width: 700px) {
+    body {
+        display: flex;
+        justify-content: center;
+        font-weight: 100;
+        font-size: 15px;
+    }
+    
+    .deck {
+        margin: 0 2px;
+        min-height: auto;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .deck .card {
+        flex-basis: 24%;
+        margin: 1px;
+    }
+    
+    .message {
+        top: 10%;
+    }
+    
+}
+
+/* Tablet and higher resolution screens */
+@media screen and (min-height: 750px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
