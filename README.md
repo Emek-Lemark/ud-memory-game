@@ -12,6 +12,8 @@ This game is built using. Click [here](https://emek-lemark.github.io.) to play
 * Vanilla JS
 * CSS3
 * HTML5
+* Google fonts [Lato](https://fonts.googleapis.com/css?family=Lato)
+* Bootstrap
 
 
 ## How To Play
