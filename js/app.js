@@ -1,4 +1,3 @@
-
 //declare variables to store array in cards
 let card = document.getElementsByClassName('card');
 const cards = [...card];
@@ -172,13 +171,13 @@ function congrats() {
     document.getElementById('finalMove').innerHTML = moves;
     document.getElementById('star-rating').innerHTML = starRating;
     document.getElementById('totalTime').innerHTML = finalTime;
-      closeModal();
+    closeModal();
     }
 }
 //close modal function, so the modal can be closed and the game reset
-function closeModal() {
-    typeof closeIcon.addEventListener('click', function(){
-        modal.classList.remove('show');
+function closeModal(){
+    closeIcon.addEventListener("click", function(e){
+        modal.classList.remove("show");
         startGame();
     });
 }

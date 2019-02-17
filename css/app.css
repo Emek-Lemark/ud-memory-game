@@ -198,6 +198,11 @@ h1 {
 }
 
 
+.popup .close:hover {
+	color: #E5F720;
+}
+
+
 .showup .congratulation, .stats {
 	max-height : 50%;
 	overflow : auto;
@@ -257,6 +262,9 @@ h1 {
         justify-content: center;
         font-weight: 100;
         font-size: 15px;
+        background : linear-gradient(to bottom right, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+		background-size : 400% 400%;
+		animation : Gradient 50s ease infinite;
     }
     
     .deck {
@@ -275,6 +283,18 @@ h1 {
         top: 10%;
     }
     
+    @keyframes Gradient {
+	0% {
+		background-position : 0% 50%;
+}
+	50% {
+		background-position : 100% 50%;
+}
+	100% {
+		background-position : 0% 50%;
+	}
+} 
+
 }
 
 /* Tablet and higher resolution screens */
@@ -282,7 +302,22 @@ h1 {
     body {
         display: flex;
         justify-content: center;
+        background : linear-gradient(to bottom right, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+		background-size : 400% 400%;
+		animation : Gradient 50s ease infinite;
     }
+    @keyframes Gradient {
+	0% {
+		background-position : 0% 50%;
+}
+	50% {
+		background-position : 100% 50%;
+}
+	100% {
+		background-position : 0% 50%;
+	}
+} 
+
 }
 
 
